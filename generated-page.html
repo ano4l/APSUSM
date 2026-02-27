@@ -1,0 +1,577 @@
+<html lang="en" class="scroll-smooth"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APSUSM | Associação dos Profissionais de Saúde Unidos e Solidários de Moçambique</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Iconify -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                fontFamily: {
+                    sans: ['Inter', 'sans-serif'],
+                },
+                extend: {
+                    colors: {
+                        slate: {
+                            50: '#f9fafb',
+                            100: '#f3f4f6',
+                            200: '#e5e7eb',
+                            300: '#d1d5db',
+                            400: '#9ca3af',
+                            500: '#6b7280',
+                            600: '#4b5563',
+                            700: '#374151',
+                            800: '#1f2937',
+                            900: '#111827',
+                            950: '#030712',
+                        },
+                        brand: {
+                            red: '#D71920',
+                            leaf: '#CF2E4D',
+                            blue: '#007ACC',
+                            green: '#8BC53F',
+                            yellow: '#FFD700',
+                            purple: '#662D91',
+                        }
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                        'glass': 'linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3))',
+                    },
+                    boxShadow: {
+                        'glow': '0 0 40px -10px rgba(0, 122, 204, 0.15)',
+                        'subtle': '0 2px 10px rgba(0, 0, 0, 0.03)',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Google Translate Overrides */
+        .goog-te-banner-frame { display: none !important; }
+        .goog-te-combo { display: none !important; }
+        body { top: 0 !important; }
+        #google_translate_element { display: none !important; }
+        
+        /* Font Smoothing & Scrollbar */
+        body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #cbd5e1; }
+
+        /* Dropdown Animation */
+        .lang-dropdown-content {
+            transform-origin: top right;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            opacity: 0;
+            transform: scale(0.95) translateY(-10px);
+            pointer-events: none;
+            visibility: hidden;
+        }
+        
+        .group:hover .lang-dropdown-content {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+            pointer-events: auto;
+            visibility: visible;
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-600 text-base leading-relaxed font-sans selection:bg-brand-blue selection:text-white relative overflow-x-hidden">
+
+    <!-- Logo Defs -->
+    <svg width="0" height="0" class="hidden">
+        <defs>
+            <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#00AEEF"></stop>
+                <stop offset="100%" stop-color="#0054A6"></stop>
+            </linearGradient>
+            <linearGradient id="greenGradient" x1="100%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#D6DF23"></stop>
+                <stop offset="100%" stop-color="#009245"></stop>
+            </linearGradient>
+            <linearGradient id="ringGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#662D91"></stop>
+                <stop offset="50%" stop-color="#ED1C24"></stop>
+                <stop offset="100%" stop-color="#F7931E"></stop>
+            </linearGradient>
+            <linearGradient id="leafGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#C1272D"></stop>
+                <stop offset="100%" stop-color="#9E005D"></stop>
+            </linearGradient>
+            <linearGradient id="crossGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#ED1C24"></stop>
+                <stop offset="100%" stop-color="#9E0000"></stop>
+            </linearGradient>
+            
+            <symbol id="logo-icon" viewBox="0 0 100 100">
+                <path d="M 15 65 A 40 40 0 0 0 85 65" fill="none" stroke="url(#ringGradient)" stroke-width="6" stroke-linecap="round"></path>
+                <path d="M 30 55 C 20 45, 20 30, 35 25 C 45 25, 45 40, 50 50" fill="none" stroke="url(#blueGradient)" stroke-width="6" stroke-linecap="round"></path>
+                <circle cx="35" cy="25" r="5" fill="url(#blueGradient)"></circle>
+                <path d="M 70 55 C 80 45, 80 30, 65 25 C 55 25, 55 40, 50 50" fill="none" stroke="url(#greenGradient)" stroke-width="6" stroke-linecap="round"></path>
+                <circle cx="65" cy="25" r="5" fill="url(#greenGradient)"></circle>
+                <path d="M 50 20 Q 30 10, 35 5 Q 50 0, 65 5 Q 70 10, 50 20 Z" fill="url(#leafGradient)"></path>
+                <rect x="40" y="44" width="20" height="6" rx="1" fill="url(#crossGradient)"></rect>
+                <rect x="47" y="37" width="6" height="20" rx="1" fill="url(#crossGradient)"></rect>
+            </symbol>
+        </defs>
+    </svg>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/50 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group opacity-90 hover:opacity-100 transition-opacity">
+                <div class="w-8 h-8">
+                    <svg class="w-full h-full drop-shadow-sm">
+                        <use href="#logo-icon"></use>
+                    </svg>
+                </div>
+                <div class="flex flex-col justify-center">
+                    <span class="text-lg font-semibold tracking-tight text-slate-900 leading-none">
+                        AP<span class="text-brand-red">+</span>SUSM
+                    </span>
+                </div>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-500">
+                <a href="#mission" class="hover:text-slate-900 transition-colors">Our Pledge</a>
+                <a href="#membership" class="hover:text-slate-900 transition-colors">The Standard</a>
+                <a href="#governance" class="hover:text-slate-900 transition-colors">Governance</a>
+                <a href="#contact" class="hover:text-slate-900 transition-colors">Contact</a>
+            </div>
+
+            <div class="hidden md:flex items-center gap-3">
+                <a href="#apply" class="text-sm font-medium text-slate-900 border border-slate-200 hover:border-slate-300 bg-white px-4 py-2 rounded-full transition-all hover:bg-slate-50">
+                    Member Portal
+                </a>
+                <a href="#apply" class="bg-slate-900 hover:bg-slate-800 text-white text-sm font-medium py-2 px-5 rounded-full transition-all shadow-sm flex items-center gap-2 group">
+                    <span>Apply for Membership</span>
+                    <iconify-icon icon="solar:arrow-right-linear" class="group-hover:translate-x-0.5 transition-transform"></iconify-icon>
+                </a>
+            </div>
+            
+            <button class="md:hidden text-slate-900 p-2">
+                <iconify-icon icon="solar:hamburger-menu-linear" width="24"></iconify-icon>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-40 pb-32 overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+            <div class="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-gradient-radial from-brand-blue/5 to-transparent opacity-60 blur-3xl"></div>
+            <div class="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-gradient-radial from-brand-green/5 to-transparent opacity-60 blur-3xl"></div>
+            <div class="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+        </div>
+        
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10 animate-fade-in">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-50 border border-slate-200/80 text-xs font-medium text-slate-500 mb-8 tracking-wide">
+                <span class="w-1.5 h-1.5 rounded-full bg-brand-blue animate-pulse"></span>
+                A Collective of Verified Professionals
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-medium text-slate-900 tracking-tight leading-[1.05] mb-8">
+                Medicine is a calling.<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-slate-500 via-slate-700 to-slate-900">Protect its integrity.</span>
+            </h1>
+            
+            <p class="text-lg md:text-xl text-slate-500 leading-relaxed max-w-2xl mx-auto mb-10 font-light">
+                We are Mozambique's vanguard of ethical healthcare. Join a verified network of professionals choosing transparency, demanding excellence, and putting human lives above the system.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#apply" class="w-full sm:w-auto px-8 py-3.5 bg-slate-900 hover:bg-slate-800 text-white rounded-full text-sm font-medium transition-all shadow-lg shadow-slate-200 hover:shadow-xl hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                    Stand With Us
+                    <iconify-icon icon="solar:shield-check-linear"></iconify-icon>
+                </a>
+                <a href="#mission" class="w-full sm:w-auto px-8 py-3.5 bg-white border border-slate-200 hover:border-slate-300 text-slate-600 rounded-full text-sm font-medium transition-all hover:bg-slate-50 flex items-center justify-center">
+                    Read the Manifesto
+                </a>
+            </div>
+            
+            <div class="mt-24 pt-10 border-t border-slate-100 grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="flex flex-col items-center gap-2">
+                    <span class="text-2xl font-medium text-slate-900 tracking-tight">2K+</span>
+                    <span class="text-xs text-slate-500 tracking-wide">United Members</span>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <span class="text-2xl font-medium text-slate-900 tracking-tight">100%</span>
+                    <span class="text-xs text-slate-500 tracking-wide">Peer Verified</span>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <span class="text-2xl font-medium text-slate-900 tracking-tight">11</span>
+                    <span class="text-xs text-slate-500 tracking-wide">Provinces Active</span>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <span class="text-2xl font-medium text-slate-900 tracking-tight">0</span>
+                    <span class="text-xs text-slate-500 tracking-wide">Compromise</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Grid -->
+    <section id="mission" class="py-24 bg-slate-50/50 border-y border-slate-200">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end gap-10 mb-16">
+                <div class="max-w-xl">
+                    <h2 class="text-3xl font-medium text-slate-900 tracking-tight mb-4">The Foundation of Trust</h2>
+                    <p class="text-slate-500 leading-relaxed font-light text-lg">
+                        Real change requires more than good intentions. It demands a structural, unyielding commitment to the core values of our profession.
+                    </p>
+                </div>
+                <a href="#governance" class="text-sm font-medium text-brand-blue hover:text-brand-blue/80 flex items-center gap-1 group">
+                    View Governance Protocol
+                    <iconify-icon icon="solar:arrow-right-linear" class="group-hover:translate-x-1 transition-transform"></iconify-icon>
+                </a>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-slate-300 hover:shadow-lg hover:shadow-slate-100 transition-all duration-300 group">
+                    <div class="w-10 h-10 rounded-lg bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-600 mb-6 group-hover:bg-brand-red/5 group-hover:text-brand-red group-hover:border-brand-red/10 transition-colors">
+                        <iconify-icon icon="solar:shield-warning-linear" width="20"></iconify-icon>
+                    </div>
+                    <h3 class="text-lg font-medium tracking-tight text-slate-900 mb-3">Uncompromising Ethics</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed font-light">Systematic reporting and elimination of bribery. We protect whistleblowers and actively dismantle unethical practices within our institutions.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-slate-300 hover:shadow-lg hover:shadow-slate-100 transition-all duration-300 group">
+                    <div class="w-10 h-10 rounded-lg bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-600 mb-6 group-hover:bg-brand-blue/5 group-hover:text-brand-blue group-hover:border-brand-blue/10 transition-colors">
+                        <iconify-icon icon="solar:medal-star-linear" width="20"></iconify-icon>
+                    </div>
+                    <h3 class="text-lg font-medium tracking-tight text-slate-900 mb-3">Verified Excellence</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed font-light">A rigorous, peer-reviewed vetting process ensures every member holding our credential possesses valid qualifications and a pristine record.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-slate-300 hover:shadow-lg hover:shadow-slate-100 transition-all duration-300 group">
+                    <div class="w-10 h-10 rounded-lg bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-600 mb-6 group-hover:bg-brand-green/5 group-hover:text-brand-green group-hover:border-brand-green/10 transition-colors">
+                        <iconify-icon icon="solar:heart-pulse-linear" width="20"></iconify-icon>
+                    </div>
+                    <h3 class="text-lg font-medium tracking-tight text-slate-900 mb-3">Human-Centric Care</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed font-light">Reorienting the medical culture back to its roots: prioritizing patient dignity, absolute safety, and the highest quality of care above all else.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Membership Feature -->
+    <section id="membership" class="py-32 bg-white relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+                <div class="order-2 lg:order-1">
+                    <div class="relative w-full aspect-[1.586/1] max-w-[480px] mx-auto perspective-1000 group">
+                        <!-- Card Body -->
+                        <div class="relative w-full h-full bg-[#0a0a0a] rounded-2xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.2)] border border-slate-800 overflow-hidden transform transition-all duration-700 hover:rotate-y-2 hover:scale-105">
+                            
+                            <!-- Subtle Tech Grid -->
+                            <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:16px_16px]"></div>
+                            
+                            <!-- Smart Card Chip -->
+                            <div class="absolute top-8 right-8 w-11 h-8 bg-gradient-to-br from-slate-200 to-slate-400 rounded border border-slate-500 flex items-center justify-center z-20">
+                                <div class="w-6 h-5 border border-slate-500/30 rounded-[2px] grid grid-cols-2 gap-[1px]">
+                                    <div class="border-r border-b border-slate-500/30"></div>
+                                    <div class="border-b border-slate-500/30"></div>
+                                    <div class="border-r border-slate-500/30"></div>
+                                    <div></div>
+                                </div>
+                            </div>
+
+                            <div class="relative p-8 h-full flex flex-col justify-between z-10">
+                                <div class="flex justify-between items-start">
+                                    <div class="flex items-center gap-3">
+                                        <svg class="w-8 h-8 opacity-90">
+                                            <use href="#logo-icon"></use>
+                                        </svg>
+                                        <div>
+                                            <div class="text-sm font-medium tracking-tight text-white">APSUSM</div>
+                                            <div class="text-xs tracking-wider text-slate-400 font-medium">VERIFIED MEMBER</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-end gap-5 mt-4">
+                                    <div class="w-20 h-24 bg-slate-800/50 rounded border border-slate-700 flex items-end justify-center overflow-hidden relative backdrop-blur-sm">
+                                         <iconify-icon icon="solar:user-circle-linear" class="text-slate-500 text-5xl mb-1"></iconify-icon>
+                                         <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                                    </div>
+                                    <div class="flex-1 min-w-0 pb-1">
+                                        <div class="text-lg font-medium text-white truncate tracking-tight">Dr. Antonio Silva</div>
+                                        <div class="text-xs text-slate-400 font-medium mb-3 flex items-center gap-1.5">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-brand-blue shadow-[0_0_8px_rgba(0,122,204,0.6)]"></span>
+                                            Cardiology Specialist
+                                        </div>
+                                        <div class="flex justify-between text-xs text-slate-500 font-mono tracking-wider">
+                                            <span>ID: MZ-892-A</span>
+                                            <span>EXP: 12/25</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Bottom Security Line -->
+                            <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-blue via-brand-leaf to-brand-green opacity-80"></div>
+                        </div>
+                        
+                        <!-- Glow Effect -->
+                        <div class="absolute inset-0 bg-brand-blue/10 blur-[60px] -z-10 translate-y-10 opacity-30 group-hover:opacity-50 transition-opacity duration-700 rounded-full"></div>
+                    </div>
+                    
+                    <div class="text-center mt-8">
+                        <span class="inline-flex items-center gap-1.5 text-xs font-medium text-slate-400 uppercase tracking-widest">
+                            <iconify-icon icon="solar:scanner-linear"></iconify-icon>
+                            NFC-Enabled Digital Credential
+                        </span>
+                    </div>
+                </div>
+
+                <div class="order-1 lg:order-2">
+                    <h2 class="text-3xl font-medium text-slate-900 tracking-tight mb-6">
+                        The mark of a trusted professional.
+                    </h2>
+                    <p class="text-slate-500 leading-relaxed mb-8 font-light text-lg">
+                        The APSUSM credential isn't just an ID card; it's a statement of integrity. It empowers patients and institutions to instantly verify your standing as a committed, ethical practitioner.
+                    </p>
+                    <ul class="space-y-5">
+                        <li class="flex items-start gap-4 text-slate-600">
+                            <div class="mt-0.5 bg-slate-50 p-1.5 rounded-md border border-slate-200">
+                                <iconify-icon icon="solar:qr-code-linear" class="text-slate-700 text-lg"></iconify-icon>
+                            </div>
+                            <div>
+                                <span class="block text-sm font-medium text-slate-900 mb-0.5">Instant Verification</span>
+                                <span class="text-sm text-slate-500 font-light">Digital, cryptographic proof of your active credentials accessible via scan.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4 text-slate-600">
+                            <div class="mt-0.5 bg-slate-50 p-1.5 rounded-md border border-slate-200">
+                                <iconify-icon icon="solar:shield-check-linear" class="text-slate-700 text-lg"></iconify-icon>
+                            </div>
+                            <div>
+                                <span class="block text-sm font-medium text-slate-900 mb-0.5">Legal &amp; Peer Shield</span>
+                                <span class="text-sm text-slate-500 font-light">Comprehensive institutional backing when reporting systemic malpractice.</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4 text-slate-600">
+                            <div class="mt-0.5 bg-slate-50 p-1.5 rounded-md border border-slate-200">
+                                <iconify-icon icon="solar:diploma-linear" class="text-slate-700 text-lg"></iconify-icon>
+                            </div>
+                            <div>
+                                <span class="block text-sm font-medium text-slate-900 mb-0.5">Elevated Standards</span>
+                                <span class="text-sm text-slate-500 font-light">Exclusive access to premier continued medical education and resources.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Form -->
+    <section id="apply" class="py-32 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-medium text-slate-900 tracking-tight mb-4">Take your stand.</h2>
+                <p class="text-slate-500 text-base font-light">Submit your credentials for peer review. Join the professionals who are defining the future of our medical system.</p>
+            </div>
+
+            <form class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200" onsubmit="event.preventDefault(); alert('Application Submitted');">
+                <div class="space-y-6">
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-xs font-medium text-slate-700">First Name</label>
+                            <input type="text" class="w-full px-4 py-3 bg-white border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-4 focus:ring-slate-900/5 focus:border-slate-400 transition-all placeholder:text-slate-400" placeholder="Jane">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-xs font-medium text-slate-700">Last Name</label>
+                            <input type="text" class="w-full px-4 py-3 bg-white border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-4 focus:ring-slate-900/5 focus:border-slate-400 transition-all placeholder:text-slate-400" placeholder="Doe">
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="text-xs font-medium text-slate-700">Professional Email</label>
+                        <input type="email" class="w-full px-4 py-3 bg-white border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-4 focus:ring-slate-900/5 focus:border-slate-400 transition-all placeholder:text-slate-400" placeholder="doctor@clinic.com">
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="text-xs font-medium text-slate-700">Medical License Number</label>
+                        <input type="text" class="w-full px-4 py-3 bg-white border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-4 focus:ring-slate-900/5 focus:border-slate-400 transition-all placeholder:text-slate-400 font-mono tracking-wide" placeholder="MZ-0000-00">
+                    </div>
+                    
+                    <div class="space-y-2">
+                        <label class="text-xs font-medium text-slate-700">Primary Province of Practice</label>
+                        <div class="relative">
+                            <select class="w-full px-4 py-3 bg-white border border-slate-200 rounded-lg text-sm text-slate-600 appearance-none focus:outline-none focus:ring-4 focus:ring-slate-900/5 focus:border-slate-400 transition-all cursor-pointer">
+                                <option>Maputo Cidade</option>
+                                <option>Maputo Província</option>
+                                <option>Sofala</option>
+                                <option>Nampula</option>
+                            </select>
+                            <iconify-icon icon="solar:alt-arrow-down-linear" class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"></iconify-icon>
+                        </div>
+                    </div>
+
+                    <div class="pt-6">
+                        <button type="submit" class="w-full bg-slate-900 text-white font-medium py-3.5 rounded-lg hover:bg-slate-800 transition-all shadow-lg shadow-slate-200 active:scale-[0.99] flex items-center justify-center gap-2">
+                            Submit Credentials Securely
+                            <iconify-icon icon="solar:lock-keyhole-minimalistic-linear"></iconify-icon>
+                        </button>
+                    </div>
+                    
+                    <div class="text-center pt-2">
+                        <p class="text-xs text-slate-400 font-light flex items-center justify-center gap-1.5">
+                            <iconify-icon icon="solar:shield-check-linear"></iconify-icon>
+                            Your data is end-to-end encrypted and strictly confidential.
+                        </p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white pt-20 pb-10 border-t border-slate-200">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between gap-12 mb-16">
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2">
+                        <svg class="w-6 h-6">
+                            <use href="#logo-icon"></use>
+                        </svg>
+                        <span class="font-medium text-slate-900 tracking-tight">APSUSM</span>
+                    </div>
+                    <p class="text-sm text-slate-500 max-w-xs font-light">
+                        Advancing healthcare ethics, uncompromising standards, and human-centric care in Mozambique since 2023.
+                    </p>
+                </div>
+                
+                <div class="flex gap-16 text-sm">
+                    <div class="space-y-3">
+                        <h4 class="font-medium text-slate-900">Organization</h4>
+                        <ul class="space-y-2 text-slate-500 font-light">
+                            <li><a href="#" class="hover:text-slate-900 transition-colors">Our Story</a></li>
+                            <li><a href="#" class="hover:text-slate-900 transition-colors">Ethics Board</a></li>
+                            <li><a href="#" class="hover:text-slate-900 transition-colors">Strategic Partners</a></li>
+                        </ul>
+                    </div>
+                    <div class="space-y-3">
+                        <h4 class="font-medium text-slate-900">Legal</h4>
+                        <ul class="space-y-2 text-slate-500 font-light">
+                            <li><a href="#" class="hover:text-slate-900 transition-colors">Privacy Protocol</a></li>
+                            <li><a href="#" class="hover:text-slate-900 transition-colors">Terms of Membership</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex justify-between items-center pt-8 border-t border-slate-100 text-xs text-slate-400">
+                <p>© 2023 APSUSM. Defining the standard.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-slate-600 transition-colors"><iconify-icon icon="ri:twitter-x-line" width="16"></iconify-icon></a>
+                    <a href="#" class="hover:text-slate-600 transition-colors"><iconify-icon icon="ri:linkedin-line" width="16"></iconify-icon></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Translation UI Container -->
+    <div id="google_translate_element"></div>
+    <div class="fixed top-24 right-6 z-40 group">
+        <button class="bg-white/80 backdrop-blur-sm hover:bg-white text-slate-700 h-11 pl-3 pr-4 rounded-full shadow-lg shadow-slate-200/50 border border-slate-200 flex items-center gap-2.5 transition-all duration-300 active:scale-95 group-hover:border-slate-300">
+            <div id="current-flag" class="flex items-center justify-center">
+                <iconify-icon icon="circle-flags:us" width="20"></iconify-icon>
+            </div>
+            <span id="current-lang" class="text-xs font-medium tracking-wide">English</span>
+            <iconify-icon icon="solar:alt-arrow-down-linear" class="text-slate-400 group-hover:text-slate-600 transition-colors text-xs ml-0.5 group-hover:-rotate-180 transform duration-300"></iconify-icon>
+        </button>
+
+        <div class="lang-dropdown-content absolute top-full right-0 mt-2 w-48 bg-white border border-slate-200 rounded-xl shadow-2xl shadow-slate-900/10 overflow-hidden flex flex-col p-1.5 z-50">
+            <button onclick="changeLanguage('en', '🇺🇸', 'English')" class="flex items-center gap-3 px-3 py-2.5 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-colors text-left w-full">
+                <iconify-icon icon="circle-flags:us" width="18"></iconify-icon>
+                <span>English</span>
+            </button>
+            <button onclick="changeLanguage('pt', '🇲🇿', 'Português')" class="flex items-center gap-3 px-3 py-2.5 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-colors text-left w-full">
+                <iconify-icon icon="circle-flags:mz" width="18"></iconify-icon>
+                <span>Português</span>
+            </button>
+            <button onclick="changeLanguage('es', '🇪🇸', 'Español')" class="flex items-center gap-3 px-3 py-2.5 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-colors text-left w-full">
+                <iconify-icon icon="circle-flags:es" width="18"></iconify-icon>
+                <span>Español</span>
+            </button>
+            <button onclick="changeLanguage('fr', '🇫🇷', 'Français')" class="flex items-center gap-3 px-3 py-2.5 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-colors text-left w-full">
+                <iconify-icon icon="circle-flags:fr" width="18"></iconify-icon>
+                <span>Français</span>
+            </button>
+        </div>
+    </div>
+    
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,pt,es,fr',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+            setTimeout(loadSavedLanguage, 1000);
+        }
+
+        function changeLanguage(langCode, flagEmoji, langName) {
+            const select = document.querySelector('.goog-te-combo');
+            if (select) {
+                select.value = langCode;
+                select.dispatchEvent(new Event('change'));
+                updateWidgetUI(langCode);
+                localStorage.setItem('apsusm_lang', langCode);
+            }
+        }
+
+        function updateWidgetUI(langCode) {
+            const flagMap = {
+                'en': 'circle-flags:us',
+                'pt': 'circle-flags:mz',
+                'es': 'circle-flags:es',
+                'fr': 'circle-flags:fr'
+            };
+            const nameMap = {
+                'en': 'English',
+                'pt': 'Português',
+                'es': 'Español',
+                'fr': 'Français'
+            };
+            const iconEl = document.querySelector('#current-flag iconify-icon');
+            const textEl = document.getElementById('current-lang');
+            if(iconEl) iconEl.setAttribute('icon', flagMap[langCode] || 'circle-flags:us');
+            if(textEl) textEl.textContent = nameMap[langCode] || 'English';
+        }
+
+        function loadSavedLanguage() {
+            const savedLang = localStorage.getItem('apsusm_lang');
+            if (savedLang) {
+                changeLanguage(savedLang);
+            }
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+</body></html>

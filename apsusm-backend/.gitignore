@@ -1,0 +1,10 @@
+target/
+data/
+uploads/
+generated-cards/
+*.log
+.idea/
+*.iml
+.mvn/
+mvnw
+mvnw.cmd
