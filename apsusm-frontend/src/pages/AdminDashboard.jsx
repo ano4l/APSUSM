@@ -134,7 +134,7 @@ export default function AdminDashboard() {
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4 mb-6 md:mb-8">
             {[
               { label: 'Total Members', value: stats.totalMembers, icon: Users, color: 'text-slate-700' },
-              { label: 'Pending Payment', value: stats.pendingPayment, icon: Clock, color: 'text-yellow-600' },
+              { label: 'Pending Review', value: stats.pendingPayment, icon: Clock, color: 'text-yellow-600' },
               { label: 'Paid', value: stats.paid, icon: CreditCard, color: 'text-blue-600' },
               { label: 'Active', value: stats.active, icon: CheckCircle, color: 'text-green-600' },
               { label: 'Cards Generated', value: stats.cardGenerated, icon: Image, color: 'text-emerald-600' },
@@ -177,7 +177,7 @@ export default function AdminDashboard() {
                 className="pl-9 pr-4 py-2.5 bg-white border border-slate-200 rounded-lg text-sm appearance-none focus:outline-none focus:ring-4 focus:ring-slate-900/5 focus:border-slate-400 transition-all cursor-pointer"
               >
                 <option value="">All Statuses</option>
-                <option value="PENDING_PAYMENT">Pending Payment</option>
+                <option value="PENDING_PAYMENT">Pending Review</option>
                 <option value="PAID">Paid</option>
                 <option value="CARD_GENERATED">Card Generated</option>
                 <option value="ACTIVE">Active</option>

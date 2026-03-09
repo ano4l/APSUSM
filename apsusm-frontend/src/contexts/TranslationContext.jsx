@@ -14,14 +14,14 @@ const translations = {
     hero_tag: 'Membership open for',
     hero_tag_suffix: 'health professionals',
     hero_title: 'Membership Portal',
-    hero_subtitle: 'Join the Associação dos Profissionais de Saúde Unidos e Solidários de Moçambique. Register online, pay securely, and receive your verified digital membership card.',
+    hero_subtitle: 'Join the Associação dos Profissionais de Saúde Unidos e Solidários de Moçambique. Register online and receive your verified digital membership card.',
     hero_cta_primary: 'Apply for Membership',
     hero_cta_secondary: 'How it works',
 
     // Homepage — Stats
     stats_members: 'Registered Members',
     stats_provinces: 'Provinces Covered',
-    stats_secure: 'Secure Payments',
+    stats_secure: 'Member Verification',
     stats_card: 'Card Generation',
 
     // Homepage — Features
@@ -31,10 +31,10 @@ const translations = {
     feature_card_desc: 'Receive a professionally designed digital card with your photo, unique ID, and QR verification code.',
     feature_verify_title: 'Secure Verification',
     feature_verify_desc: 'Every card carries a scannable QR code that instantly verifies your membership status online.',
-    feature_payment_title: 'Paystack Payments',
-    feature_payment_desc: 'Safe and fast payment processing through Paystack — supports mobile money and card payments.',
+    feature_payment_title: 'Member Review',
+    feature_payment_desc: 'Registrations are reviewed for current members and cards are issued without an online payment step.',
     feature_email_title: 'Email Confirmation',
-    feature_email_desc: 'Get your membership card and payment receipt delivered directly to your inbox within 24 hours.',
+    feature_email_desc: 'Get your membership card and confirmation details delivered directly to your inbox within 24 hours.',
 
     // Homepage — Mission
     mission_label: 'Our Mission',
@@ -56,8 +56,8 @@ const translations = {
     process_subtitle: 'How it works',
     process_1_title: 'Fill Registration Form',
     process_1_desc: 'Provide your personal details, institution, position, and upload a clear ID photo.',
-    process_2_title: 'Complete Payment',
-    process_2_desc: 'Pay the membership fee securely via Paystack. You\'ll be redirected back automatically.',
+    process_2_title: 'Confirm Registration',
+    process_2_desc: 'Review your details and submit your registration. No online payment is required right now.',
     process_3_title: 'Receive Your Card',
     process_3_desc: 'Your unique Member ID and digital membership card are generated instantly.',
 
@@ -65,7 +65,7 @@ const translations = {
     cta_title: 'Join today',
     cta_subtitle: 'Ready to become a verified APSUSM member?',
     cta_button: 'Apply Now',
-    cta_note: 'Fast process · Secure payment · Digital card',
+    cta_note: 'Fast process · Member review · Digital card',
 
     // Registration Page
     reg_badge: 'Membership Registration',
@@ -73,7 +73,7 @@ const translations = {
     reg_subheadline: 'Complete your registration to become a verified APSUSM member and receive your digital credential.',
     reg_step_details: 'Details',
     reg_step_review: 'Review',
-    reg_step_payment: 'Payment',
+    reg_step_payment: 'Complete',
 
     reg_full_name: 'Full Name',
     reg_full_name_placeholder: 'e.g. Natália Eduardo Chiau',
@@ -123,12 +123,12 @@ const translations = {
     reg_error_photo_type: 'Only JPEG and PNG images are allowed',
     reg_error_photo_size: 'File size must be under 5MB',
     reg_error_terms: 'You must accept the terms and conditions',
-    reg_error_payment: 'Payment initialization failed',
+    reg_error_payment: 'Registration could not be finalized',
     reg_error_failed: 'Registration failed. Please try again.',
 
     // Payment Verification
     verify_verifying: 'Verifying Payment...',
-    verify_verifying_desc: 'Please wait while we confirm your payment with Paystack.',
+    verify_verifying_desc: 'Please wait while we confirm your registration details.',
     verify_success: 'Payment Verified!',
     verify_success_desc: 'Your membership card is being generated. Redirecting...',
     verify_failed: 'Payment Failed',
@@ -166,7 +166,7 @@ const translations = {
     admin_no_members: 'No members found',
 
     admin_stats_total: 'Total Members',
-    admin_stats_pending: 'Pending Payment',
+    admin_stats_pending: 'Pending Review',
     admin_stats_paid: 'Paid',
     admin_stats_active: 'Active',
     admin_stats_cards: 'Cards Generated',
@@ -175,7 +175,7 @@ const translations = {
     admin_members: 'Members',
     admin_search_placeholder: 'Search name, email, ID...',
     admin_filter_all: 'All Statuses',
-    admin_filter_pending: 'Pending Payment',
+    admin_filter_pending: 'Pending Review',
     admin_filter_paid: 'Paid',
     admin_filter_card: 'Card Generated',
     admin_filter_active: 'Active',
@@ -255,7 +255,7 @@ const translations = {
     hero_tag: 'Associação aberta para',
     hero_tag_suffix: 'profissionais de saúde',
     hero_title: 'Portal de Filiação',
-    hero_subtitle: 'Junte-se à Associação dos Profissionais de Saúde Unidos e Solidários de Moçambique. Registre-se online, pague com segurança e receba seu cartão de filiação digital verificado.',
+    hero_subtitle: 'Junte-se à Associação dos Profissionais de Saúde Unidos e Solidários de Moçambique. Registre-se online e receba seu cartão de filiação digital verificado.',
     hero_cta_primary: 'Inscrever-se',
     hero_cta_secondary: 'Como funciona',
 
@@ -272,10 +272,10 @@ const translations = {
     feature_card_desc: 'Receba um cartão digital profissionalmente projetado com sua foto, ID exclusivo e código QR de verificação.',
     feature_verify_title: 'Verificação Segura',
     feature_verify_desc: 'Cada cartão possui um código QR escaneável que verifica instantaneamente seu status de filiação online.',
-    feature_payment_title: 'Pagamentos Paystack',
-    feature_payment_desc: 'Processamento de pagamento rápido e seguro através do Paystack — suporta dinheiro móvel e pagamentos com cartão.',
+    feature_payment_title: 'Validação de Membros',
+    feature_payment_desc: 'Os registos são validados para membros atuais e os cartões são emitidos sem etapa de pagamento online.',
     feature_email_title: 'Confirmação por Email',
-    feature_email_desc: 'Receba seu cartão de filiação e comprovante de pagamento diretamente na sua caixa de entrada em até 24 horas.',
+    feature_email_desc: 'Receba seu cartão de filiação e os detalhes de confirmação diretamente na sua caixa de entrada em até 24 horas.',
 
     // Homepage — Mission
     mission_label: 'Nossa Missão',
@@ -297,8 +297,8 @@ const translations = {
     process_subtitle: 'Como funciona',
     process_1_title: 'Preencher Formulário',
     process_1_desc: 'Forneça seus dados pessoais, instituição, cargo e carregue uma foto de identificação clara.',
-    process_2_title: 'Completar Pagamento',
-    process_2_desc: 'Pague a taxa de filiação com segurança através do Paystack. Você será redirecionado automaticamente.',
+    process_2_title: 'Confirmar Registo',
+    process_2_desc: 'Revise os seus dados e envie o registo. Não é necessário pagamento online neste momento.',
     process_3_title: 'Receber seu Cartão',
     process_3_desc: 'Seu ID de Membro exclusivo e cartão de filiação digital são gerados instantaneamente.',
 
@@ -306,7 +306,7 @@ const translations = {
     cta_title: 'Junte-se hoje',
     cta_subtitle: 'Pronto para se tornar um membro verificado da APSUSM?',
     cta_button: 'Inscrever-se Agora',
-    cta_note: 'Processo rápido · Pagamento seguro · Cartão digital',
+    cta_note: 'Processo rápido · Validação de membro · Cartão digital',
 
     // Registration Page
     reg_badge: 'Registro de Filiação',
@@ -314,7 +314,7 @@ const translations = {
     reg_subheadline: 'Complete seu registro para se tornar um membro verificado da APSUSM e receber sua credencial digital.',
     reg_step_details: 'Dados',
     reg_step_review: 'Revisão',
-    reg_step_payment: 'Pagamento',
+    reg_step_payment: 'Concluir',
 
     reg_full_name: 'Nome Completo',
     reg_full_name_placeholder: 'ex. Natália Eduardo Chiau',
@@ -364,12 +364,12 @@ const translations = {
     reg_error_photo_type: 'Apenas imagens JPEG e PNG são permitidas',
     reg_error_photo_size: 'O arquivo deve ter menos de 5MB',
     reg_error_terms: 'Você deve aceitar os termos e condições',
-    reg_error_payment: 'Falha na inicialização do pagamento',
+    reg_error_payment: 'Não foi possível concluir o registo',
     reg_error_failed: 'Registro falhou. Por favor, tente novamente.',
 
     // Payment Verification
     verify_verifying: 'Verificando Pagamento...',
-    verify_verifying_desc: 'Aguarde enquanto confirmamos seu pagamento com o Paystack.',
+    verify_verifying_desc: 'Aguarde enquanto confirmamos os detalhes do seu registo.',
     verify_success: 'Pagamento Verificado!',
     verify_success_desc: 'Seu cartão de filiação está sendo gerado. Redirecionando...',
     verify_failed: 'Pagamento Falhou',
@@ -407,7 +407,7 @@ const translations = {
     admin_no_members: 'Nenhum membro encontrado',
 
     admin_stats_total: 'Total de Membros',
-    admin_stats_pending: 'Pagamento Pendente',
+    admin_stats_pending: 'Revisão Pendente',
     admin_stats_paid: 'Pago',
     admin_stats_active: 'Ativo',
     admin_stats_cards: 'Cartões Gerados',
@@ -416,7 +416,7 @@ const translations = {
     admin_members: 'Membros',
     admin_search_placeholder: 'Buscar nome, email, ID...',
     admin_filter_all: 'Todos os Status',
-    admin_filter_pending: 'Pagamento Pendente',
+    admin_filter_pending: 'Revisão Pendente',
     admin_filter_paid: 'Pago',
     admin_filter_card: 'Cartão Gerado',
     admin_filter_active: 'Ativo',

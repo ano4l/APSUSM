@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import {
-  ArrowDownRight, ArrowRight, Shield, CreditCard,
+  ArrowDownRight, ArrowRight, Shield,
   Mail, Stethoscope, QrCode, BadgeCheck,
-  Heart, Handshake, Megaphone, Award
+  Heart, Handshake, Megaphone, Award, FileCheck
 } from 'lucide-react'
 import { useTranslation } from '../contexts/TranslationContext'
 
@@ -26,9 +26,9 @@ const features = [
     descKey: 'feature_verify_desc',
   },
   {
-    icon: CreditCard,
-    titleKey: 'feature_payment_title',
-    descKey: 'feature_payment_desc',
+    icon: FileCheck,
+    titleKey: 'reg_payment_required',
+    descKey: 'reg_payment_desc',
   },
   {
     icon: Mail,
@@ -39,7 +39,7 @@ const features = [
 
 const steps = [
   { num: '01', titleKey: 'process_1_title', descKey: 'process_1_desc' },
-  { num: '02', titleKey: 'process_2_title', descKey: 'process_2_desc' },
+  { num: '02', titleKey: 'process_2_title', descKey: 'reg_payment_desc' },
   { num: '03', titleKey: 'process_3_title', descKey: 'process_3_desc' },
 ]
 

@@ -21,6 +21,7 @@ Railway will use each folder's `railway.json` automatically.
 Set these in backend service Variables:
 
 Required:
+- `PORT=${{PORT}}` is provided by Railway automatically; the app now reads it via `server.port=${PORT:5445}`
 - `SPRING_DATASOURCE_URL=jdbc:postgresql://<PGHOST>:<PGPORT>/<PGDATABASE>`
 - `SPRING_DATASOURCE_USERNAME=<PGUSER>`
 - `SPRING_DATASOURCE_PASSWORD=<PGPASSWORD>`
@@ -30,12 +31,8 @@ Required:
 - `SPRING_H2_CONSOLE_ENABLED=false`
 - `APP_CORS_ALLOWED_ORIGINS=https://<your-frontend-domain>.up.railway.app`
 - `APP_CARD_GENERATOR_URL=https://<your-card-generator-domain>.up.railway.app`
-- `PAYSTACK_CALLBACK_URL=https://<your-frontend-domain>.up.railway.app/payment/verify`
 
 Secrets:
-- `PAYSTACK_SECRET_KEY`
-- `PAYSTACK_PUBLIC_KEY`
-- `PAYSTACK_WEBHOOK_SECRET`
 - `MAIL_HOST`
 - `MAIL_PORT` (usually `587`)
 - `MAIL_USERNAME`
@@ -62,21 +59,22 @@ Health check endpoint:
 Set:
 - `VITE_API_BASE_URL=https://<your-backend-domain>.up.railway.app/api`
 
-## 5) Paystack setup
+## 5) Current registration flow
 
-- Callback URL: `https://<your-frontend-domain>.up.railway.app/payment/verify`
-- Webhook URL: `https://<your-backend-domain>.up.railway.app/api/webhooks/paystack`
+- Member registration currently completes without an online payment step.
+- Keep the Paystack config out of Railway unless you decide to re-enable payment later.
+- If you re-enable Paystack later, add callback and webhook URLs back at that time.
 
 ## 6) Smoke test
 
 1. Open frontend URL
 2. Submit registration
-3. Confirm backend logs show register + payment init
+3. Confirm backend logs show registration, card generation, and email processing
 4. Confirm card generator health endpoint is OK
-5. Complete payment and verify callback/webhook flow
+5. Open the success page and confirm card downloads work
 
 ## Notes
 
 - Frontend now supports env-based backend URL via `VITE_API_BASE_URL`.
+- Backend now reads `PORT` and `APP_CORS_ALLOWED_ORIGINS` from Railway environment variables.
 - Local development still works with `/api` fallback in `apsusm-frontend/src/api.js`.
-- Existing `render.yaml` can remain in repo; Railway ignores it.

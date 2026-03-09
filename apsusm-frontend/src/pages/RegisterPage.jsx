@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Loader2, CheckCircle, AlertCircle, Camera, Shield, CreditCard, ArrowRight, FileCheck, Sparkles, ImageIcon } from 'lucide-react'
+import { Loader2, CheckCircle, AlertCircle, Camera, Shield, ArrowRight, FileCheck, Sparkles, ImageIcon } from 'lucide-react'
 import { registerMember } from '../api'
 import { useTranslation } from '../contexts/TranslationContext'
 
@@ -407,7 +407,7 @@ export default function RegisterPage() {
 
             <div className="p-4 bg-blue-50 border border-blue-200 rounded-xl">
               <div className="flex items-center gap-2 text-sm font-medium text-blue-800 mb-1">
-                <CreditCard className="w-4 h-4" />
+                <CheckCircle className="w-4 h-4" />
                 {t('reg_payment_required')}
               </div>
               <p className="text-xs text-blue-600">
