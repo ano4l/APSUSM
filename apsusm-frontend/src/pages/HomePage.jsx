@@ -47,14 +47,12 @@ export default function HomePage() {
   const { t } = useTranslation()
   return (
     <div className="bg-[#f2f0eb] min-h-screen font-sans">
-      {/* ── HERO ─────────────────────────────────────────────────── */}
+      {/* HERO */}
       <section className="min-h-[80vh] md:min-h-screen pt-20 flex items-center">
         <div className="max-w-7xl mx-auto px-6 w-full">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[calc(80vh-5rem)] md:min-h-[calc(100vh-5rem)] py-8 md:py-16">
 
-            {/* Left — headline */}
             <div className="flex flex-col justify-center">
-              {/* Tag */}
               <div className="flex items-center gap-3 mb-6 md:mb-10">
                 <div className="w-6 h-px bg-slate-400" />
                 <div className="flex items-center gap-2 text-sm text-slate-600">
@@ -66,7 +64,6 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* Headline */}
               <h1 className="text-[clamp(2.25rem,7vw,5.5rem)] font-bold text-slate-900 leading-[0.92] tracking-tight mb-6 md:mb-8">
                 APSUSM<br />
                 {t('hero_title').split(' ').map((word, i) => (
@@ -80,7 +77,6 @@ export default function HomePage() {
                 {t('hero_subtitle')}
               </p>
 
-              {/* CTAs */}
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
                 <Link
                   to="/register"
@@ -100,7 +96,6 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Mobile — compact card preview */}
             <div className="flex lg:hidden justify-center mt-4 mb-2">
               <div className="w-full max-w-xs bg-slate-900 text-white rounded-2xl p-5 shadow-2xl">
                 <div className="flex items-center justify-between mb-4">
@@ -118,13 +113,9 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Desktop — floating cards */}
             <div className="relative hidden lg:flex items-center justify-center h-[520px]">
-
-              {/* Background blob */}
               <div className="absolute inset-0 bg-gradient-to-br from-slate-200/60 to-transparent rounded-3xl" />
 
-              {/* Main card — dark */}
               <div className="absolute top-8 right-4 w-72 bg-slate-900 text-white rounded-2xl p-6 shadow-2xl">
                 <div className="flex items-center justify-between mb-6">
                   <div className="w-8 h-8 rounded-full bg-brand-red/90 flex items-center justify-center">
@@ -140,12 +131,10 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* Orange arrow accent */}
               <div className="absolute top-6 right-[calc(18rem-1.5rem)] w-14 h-14 bg-brand-red rounded-full flex items-center justify-center shadow-xl z-10">
                 <ArrowDownRight className="w-6 h-6 text-white" />
               </div>
 
-              {/* Feature card — verification */}
               <div className="absolute bottom-24 left-0 w-56 bg-white rounded-2xl p-5 shadow-xl border border-slate-100">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-8 h-8 bg-slate-100 rounded-lg flex items-center justify-center">
@@ -161,18 +150,15 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* Stat card */}
               <div className="absolute top-1/2 left-8 -translate-y-1/2 w-40 bg-[#c8c2b4] rounded-2xl p-5 shadow-lg">
                 <p className="text-4xl font-bold text-slate-900 leading-none">5k+</p>
                 <p className="text-xs text-slate-600 mt-2 leading-snug">Verified health professionals</p>
               </div>
 
-              {/* Stethoscope decorative card */}
               <div className="absolute bottom-8 right-12 w-14 h-14 bg-white rounded-2xl shadow-lg border border-slate-100 flex items-center justify-center">
                 <Stethoscope className="w-7 h-7 text-brand-blue" />
               </div>
 
-              {/* Sunburst / decorative ring */}
               <div className="absolute bottom-20 left-32 w-16 h-16 rounded-full border-2 border-slate-400/40 flex items-center justify-center">
                 <div className="w-8 h-8 rounded-full border-2 border-slate-400/40" />
               </div>
@@ -181,7 +167,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── STATS BAR ─────────────────────────────────────────────── */}
       <section className="border-t border-b border-slate-300/50 bg-white/40 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-6 py-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -195,7 +180,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── FEATURES ──────────────────────────────────────────────── */}
       <section className="py-12 md:py-24 px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
           <div className="mb-8 md:mb-14">
@@ -228,11 +212,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── MISSION ──────────────────────────────────────────────── */}
       <section className="py-12 md:py-24 px-4 md:px-6 bg-white/50">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
-            {/* Left — mission statement */}
             <div>
               <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">{t('mission_label')}</p>
               <h2 className="text-2xl md:text-4xl font-bold text-slate-900 tracking-tight mb-6">
@@ -246,7 +228,6 @@ export default function HomePage() {
               </p>
             </div>
 
-            {/* Right — four pillars */}
             <div className="grid sm:grid-cols-2 gap-5">
               {[
                 { icon: Megaphone, titleKey: 'pillar_advocacy_title', descKey: 'pillar_advocacy_desc', color: 'bg-red-50 text-red-600' },
@@ -267,7 +248,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── HOW IT WORKS ──────────────────────────────────────────── */}
       <section id="how-it-works" className="py-12 md:py-24 px-4 md:px-6 bg-white/50">
         <div className="max-w-7xl mx-auto">
           <div className="mb-8 md:mb-14">
@@ -292,7 +272,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── CTA BANNER ────────────────────────────────────────────── */}
       <section className="py-12 md:py-20 px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
           <div className="bg-slate-900 rounded-2xl md:rounded-3xl px-6 md:px-10 py-10 md:py-14 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8">
@@ -316,7 +295,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── FOOTER ────────────────────────────────────────────────── */}
       <footer className="border-t border-slate-300/50 py-8 md:py-10 px-4 md:px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
