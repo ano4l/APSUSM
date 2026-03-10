@@ -362,13 +362,14 @@ def _redraw_front_text(
             card_img.paste(patch, (x1, y1), patch)
 
     draw = ImageDraw.Draw(card_img)
-    name_font, name_lines = renderer_v2.fit_and_wrap_text(
+    name_font, name_lines = renderer_v2.fit_card_name_text(
         full_name=full_name,
         font_loader=lambda sz: renderer_v2._resolve_font_from_list(renderer_v2._FONT_NAME_CANDIDATES, sz),
         max_width=name_max_w,
         font_size=name_font_size,
         min_font_size=name_min_font_size,
         max_lines=2,
+        split_after=16,
     )
     line_spacing = round(name_font_size * 1.2)
     y_start = name_y - (len(name_lines) - 1) * line_spacing

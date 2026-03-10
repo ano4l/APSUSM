@@ -285,6 +285,57 @@ def fit_and_wrap_text(
     return font, lines
 
 
+def split_name_lines(text: str, split_after: int = 16, max_lines: int = 2) -> list:
+    """Split a long name into stable left-aligned lines for the card layout."""
+    normalized = " ".join((text or "").split())
+    if not normalized:
+        return []
+    if len(normalized) <= split_after or max_lines <= 1:
+        return [normalized]
+
+    split_at = normalized.rfind(" ", 0, split_after + 1)
+    if split_at == -1:
+        split_at = normalized.find(" ", split_after)
+    if split_at == -1:
+        return [normalized]
+
+    first = normalized[:split_at].strip()
+    remainder = normalized[split_at + 1:].strip()
+    if not remainder:
+        return [first]
+    if max_lines == 2:
+        return [first, remainder]
+
+    return [first] + split_name_lines(remainder, split_after, max_lines - 1)
+
+
+def fit_card_name_text(
+    full_name: str,
+    font_loader,
+    max_width: int,
+    font_size: int,
+    min_font_size: int,
+    max_lines: int,
+    split_after: int = 16,
+) -> tuple:
+    """Prefer a stable split after `split_after` characters, then fit the font."""
+    preferred_lines = split_name_lines(full_name, split_after=split_after, max_lines=max_lines)
+    if preferred_lines and len(preferred_lines) > 1:
+        for sz in range(font_size, min_font_size - 1, -1):
+            font = font_loader(sz)
+            if all(_measure_text_width(font, line) <= max_width for line in preferred_lines):
+                return font, preferred_lines
+
+    return fit_and_wrap_text(
+        full_name=full_name,
+        font_loader=font_loader,
+        max_width=max_width,
+        font_size=font_size,
+        min_font_size=min_font_size,
+        max_lines=max_lines,
+    )
+
+
 def _word_wrap(text: str, font, max_width: int, measure_fn) -> list:
     """Balanced word-wrap: splits text to minimise line-length difference."""
     words = text.split()
@@ -401,13 +452,14 @@ def render_front_card(
     n_fs = max(1, round(name_text["font_size"] * scale))
     n_min_fs = max(1, round(name_text["min_font_size"] * scale))
 
-    font, lines = fit_and_wrap_text(
+    font, lines = fit_card_name_text(
         full_name=full_name,
         font_loader=lambda sz: _resolve_font_from_list(_FONT_NAME_CANDIDATES, sz),
         max_width=n_max_w,
         font_size=n_fs,
         min_font_size=n_min_fs,
         max_lines=name_text["max_lines"],
+        split_after=16,
     )
 
     draw = ImageDraw.Draw(template)
