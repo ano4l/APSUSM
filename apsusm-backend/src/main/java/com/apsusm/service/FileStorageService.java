@@ -29,6 +29,7 @@ public class FileStorageService {
 
         String filename = UUID.randomUUID() + getExtension(file.getOriginalFilename());
         Path targetPath = Paths.get(uploadDir, filename);
+        Files.createDirectories(targetPath.getParent());
         Files.copy(file.getInputStream(), targetPath, StandardCopyOption.REPLACE_EXISTING);
         return targetPath.toString();
     }
