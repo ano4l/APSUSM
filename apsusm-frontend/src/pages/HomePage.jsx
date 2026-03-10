@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import {
   ArrowDownRight, ArrowRight, Shield,
-  Mail, Stethoscope, QrCode, BadgeCheck,
+  Mail, Stethoscope, BadgeCheck,
   Heart, Handshake, Megaphone, Award, FileCheck
 } from 'lucide-react'
 import { useTranslation } from '../contexts/TranslationContext'
@@ -145,15 +145,15 @@ export default function HomePage() {
                 <ArrowDownRight className="w-6 h-6 text-white" />
               </div>
 
-              {/* Feature card — QR */}
+              {/* Feature card — verification */}
               <div className="absolute bottom-24 left-0 w-56 bg-white rounded-2xl p-5 shadow-xl border border-slate-100">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-8 h-8 bg-slate-100 rounded-lg flex items-center justify-center">
-                    <QrCode className="w-4 h-4 text-slate-700" />
+                    <Shield className="w-4 h-4 text-slate-700" />
                   </div>
-                  <span className="text-sm font-semibold text-slate-800">QR Verified</span>
+                  <span className="text-sm font-semibold text-slate-800">Member Verified</span>
                 </div>
-                <p className="text-xs text-slate-500 leading-relaxed">Scan any card to instantly verify membership status.</p>
+                <p className="text-xs text-slate-500 leading-relaxed">Use the issued member ID to verify membership status online.</p>
                 <div className="mt-3 flex gap-1">
                   {[...Array(3)].map((_, i) => (
                     <div key={i} className={`h-1 flex-1 rounded-full ${i === 0 ? 'bg-green-500' : 'bg-slate-200'}`} />
