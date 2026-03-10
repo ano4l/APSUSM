@@ -18,12 +18,12 @@ public class MemberIdGenerator {
     }
 
     /**
-     * Generates a unique member ID in format: APSUSM-YYYY-XXXX
-     * e.g., APSUSM-2026-0001
+     * Generates a unique member ID in format: APSUSM-DR-YYYY-XXXX.
+     * e.g., APSUSM-DR-2026-0001
      */
     public synchronized String generateMemberId() {
         long nextVal = counter.incrementAndGet();
         int year = Year.now().getValue();
-        return String.format("APSUSM-%d-%04d", year, nextVal);
+        return String.format("APSUSM-DR-%04d-%04d", year, nextVal);
     }
 }
