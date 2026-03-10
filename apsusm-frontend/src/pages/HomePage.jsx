@@ -250,50 +250,6 @@ export default function HomePage() {
               <p className="border-l-4 border-brand-blue pl-4 text-sm font-medium leading-relaxed text-slate-600">
                 {t('mission_closing')}
               </p>
-
-              <div className="mt-8 rounded-[2rem] apsusm-gradient-panel p-[1px] shadow-2xl shadow-slate-900/10">
-                <div className="rounded-[calc(2rem-1px)] apsusm-soft-surface p-4 md:p-5">
-                  <div className="mb-5 flex items-center justify-between gap-4">
-                    <div>
-                      <p className="text-xs uppercase tracking-[0.24em] text-slate-500">In practice</p>
-                      <p className="mt-2 text-lg font-semibold text-slate-900">Solidarity and collaboration across the profession</p>
-                    </div>
-                    <div className="hidden md:flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-900 text-white shadow-lg">
-                      <Handshake className="h-5 w-5" />
-                    </div>
-                  </div>
-                  <div className="grid gap-4 md:grid-cols-[1.35fr_0.95fr]">
-                    <div className="overflow-hidden rounded-[1.75rem] border border-white/70 bg-white shadow-xl shadow-slate-900/5">
-                      <img
-                        src={collaborationImages[0].src}
-                        alt={collaborationImages[0].alt}
-                        className="h-80 w-full object-cover md:h-[27rem]"
-                        loading="lazy"
-                        referrerPolicy="no-referrer"
-                      />
-                    </div>
-                    <div className="flex flex-col gap-4">
-                      <div className="overflow-hidden rounded-[1.75rem] border border-white/70 bg-white shadow-lg shadow-slate-900/5">
-                        <img
-                          src={collaborationImages[1].src}
-                          alt={collaborationImages[1].alt}
-                          className="h-44 w-full object-cover md:h-56"
-                          loading="lazy"
-                          referrerPolicy="no-referrer"
-                        />
-                      </div>
-                      <div className="rounded-[1.5rem] apsusm-gradient-panel p-[1px] shadow-lg shadow-slate-900/10">
-                        <div className="rounded-[calc(1.5rem-1px)] bg-white/90 px-5 py-4 backdrop-blur-sm">
-                          <p className="text-xs uppercase tracking-[0.24em] text-slate-500">Solidarity</p>
-                          <p className="mt-2 text-sm leading-relaxed text-slate-700">
-                            Community, advocacy, and collaboration for professionals serving Mozambique.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
 
             <div className="grid gap-5 sm:grid-cols-2">
@@ -331,6 +287,60 @@ export default function HomePage() {
                   <p className="text-sm leading-relaxed text-slate-500">{t(p.descKey)}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 pb-12 md:px-6 md:pb-24">
+        <div className="max-w-7xl mx-auto">
+          <div className="rounded-[2rem] apsusm-gradient-panel p-[1px] shadow-2xl shadow-slate-900/10">
+            <div className="rounded-[calc(2rem-1px)] apsusm-soft-surface p-4 md:p-6">
+              <div className="mb-5 flex flex-col gap-4 md:mb-6 md:flex-row md:items-end md:justify-between">
+                <div className="max-w-2xl">
+                  <p className="text-xs uppercase tracking-[0.24em] text-slate-500">In practice</p>
+                  <p className="mt-2 text-2xl font-semibold tracking-tight text-slate-900 md:text-3xl">
+                    Solidarity and collaboration across the profession
+                  </p>
+                </div>
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-900 text-white shadow-lg">
+                  <Handshake className="h-5 w-5" />
+                </div>
+              </div>
+
+              <div className="grid gap-4 lg:grid-cols-[1.2fr_1.2fr_0.9fr]">
+                <div className="overflow-hidden rounded-[1.75rem] border border-white/70 bg-white shadow-xl shadow-slate-900/5">
+                  <img
+                    src={collaborationImages[0].src}
+                    alt={collaborationImages[0].alt}
+                    className="h-72 w-full object-cover md:h-80"
+                    loading="lazy"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+                <div className="overflow-hidden rounded-[1.75rem] border border-white/70 bg-white shadow-xl shadow-slate-900/5">
+                  <img
+                    src={collaborationImages[1].src}
+                    alt={collaborationImages[1].alt}
+                    className="h-72 w-full object-cover md:h-80"
+                    loading="lazy"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+                <div className="rounded-[1.75rem] apsusm-gradient-panel p-[1px] shadow-lg shadow-slate-900/10">
+                  <div className="flex h-full min-h-[14rem] flex-col justify-between rounded-[calc(1.75rem-1px)] bg-white/90 p-6 backdrop-blur-sm">
+                    <div>
+                      <p className="text-xs uppercase tracking-[0.24em] text-slate-500">Solidarity</p>
+                      <p className="mt-3 text-base font-semibold text-slate-900">
+                        Community, advocacy, and collaboration for professionals serving Mozambique.
+                      </p>
+                    </div>
+                    <p className="text-sm leading-relaxed text-slate-600">
+                      APSUSM connects members through one shared professional identity and one digital process.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
