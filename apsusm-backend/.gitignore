@@ -3,6 +3,7 @@ data/
 uploads/
 generated-cards/
 *.log
+.env
 .idea/
 *.iml
 .mvn/

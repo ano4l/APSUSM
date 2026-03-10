@@ -16,6 +16,10 @@ const api = axios.create({
   },
 });
 
+function getApiError(error, fallbackMessage) {
+  return error?.response?.data?.message || error?.message || fallbackMessage;
+}
+
 // Member Registration
 export async function registerMember(formData) {
   if (shouldUseMock()) {
@@ -27,8 +31,11 @@ export async function registerMember(formData) {
     });
     return response.data;
   } catch (error) {
-    console.warn('Backend not available, falling back to mock:', error);
-    return mockRegisterMember(formData);
+    if (shouldUseMock()) {
+      console.warn('Backend not available, falling back to mock:', error);
+      return mockRegisterMember(formData);
+    }
+    throw new Error(getApiError(error, 'Registration failed. Backend is unavailable.'));
   }
 }
 
@@ -41,8 +48,11 @@ export async function initializePayment(memberId) {
     const response = await api.post(`/members/${memberId}/pay`);
     return response.data;
   } catch (error) {
-    console.warn('Backend not available, falling back to mock:', error);
-    return mockPaystackPayment(memberId);
+    if (shouldUseMock()) {
+      console.warn('Backend not available, falling back to mock:', error);
+      return mockPaystackPayment(memberId);
+    }
+    throw new Error(getApiError(error, 'Payment initialization failed.'));
   }
 }
 
@@ -74,8 +84,11 @@ export async function getMemberStatus(memberId) {
     const response = await api.get(`/members/status/${memberId}`);
     return response.data;
   } catch (error) {
-    console.warn('Backend not available, falling back to mock:', error);
-    return mockGetMemberStatus(memberId);
+    if (shouldUseMock()) {
+      console.warn('Backend not available, falling back to mock:', error);
+      return mockGetMemberStatus(memberId);
+    }
+    throw new Error(getApiError(error, 'Failed to fetch member status.'));
   }
 }
 
@@ -88,8 +101,11 @@ export async function verifyMember(memberId) {
     const response = await api.get(`/members/verify/${memberId}`);
     return response.data;
   } catch (error) {
-    console.warn('Backend not available, falling back to mock:', error);
-    return mockVerifyMember(memberId);
+    if (shouldUseMock()) {
+      console.warn('Backend not available, falling back to mock:', error);
+      return mockVerifyMember(memberId);
+    }
+    throw new Error(getApiError(error, 'Member verification failed.'));
   }
 }
 
