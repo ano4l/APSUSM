@@ -16,7 +16,7 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3 group">
           <img
-            src="/brand/Logo.png"
+            src="/brand/Logo2.png"
             alt="APSUSM logo"
             className="h-11 w-auto object-contain"
           />

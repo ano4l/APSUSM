@@ -87,7 +87,7 @@ export default function HomePage() {
 
               <div className="mb-6 inline-flex w-fit items-center gap-3 rounded-2xl border border-white/70 bg-white/75 px-4 py-3 shadow-lg shadow-slate-900/5 backdrop-blur-sm md:mb-10">
                 <img
-                  src="/brand/Logo.png"
+                  src="/brand/Logo2.png"
                   alt="APSUSM"
                   className="h-10 w-10 object-contain"
                 />
@@ -136,7 +136,7 @@ export default function HomePage() {
                 <div className="absolute left-2 top-16 w-48 rounded-[1.75rem] border border-white/70 bg-white/90 p-5 shadow-xl">
                   <div className="mb-3 flex items-center gap-3">
                     <img
-                      src="/brand/Logo.png"
+                      src="/brand/Logo2.png"
                       alt="APSUSM logo"
                       className="h-10 w-10 object-contain"
                     />
@@ -336,7 +336,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto flex flex-col items-center justify-between gap-4 md:flex-row">
           <div className="flex items-center gap-3">
             <img
-              src="/brand/Logo.png"
+              src="/brand/Logo2.png"
               alt="APSUSM logo"
               className="h-9 w-auto object-contain"
             />
